@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Утилізація відходів</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <h1>Утилізація відходів</h1>
+
+    <h2>Додати замовлення</h2>
+    <form>
+      <label for="name">Назва компанії / Ім'я особи:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="typecomp">Вид компанії:</label>
+      <select id="typecomp" name="typecomp" required onchange="updateOptions()" onchange="selectOption()">
+			<option disabled selected>Оберіть вид вашої компанії</option>
+			<option value="manufacturing">Виробниче підприємство</option>
+			<option value="catering">Підприємство громадського харчування</option>
+			<option value="medical">Медична установа</option>
+			<option value="office">Офіс</option>
+			<option value="other">Інша установа</option>
+			<option value="private">Приватна особа</option>
+		 </select>
+
+		 <label for="typetr">Тип відходів:</label>
+		 <select id="typetr" name="typetr" required>
+			<option value="" disabled selected>Оберіть тип відходів</option>
+		  </select>
+
+		  <input type="text" id="textInput" disabled>
+
+		  <label for="amount">Кількість відходів(кг):</label>
+		  <input type="number" id="amount" name="amount" required />
+
+		 <label for="date">Дата завантаження відходів:</label>
+		 <input type="date" id="date" name="date" required />
+
+		  <label for="email">Пошта:</label>
+		  <input type="text" id="email" name="email" required />
+
+      <label for="number">Номер телефону:</label>
+      <input type="number" id="number" name="number" required />
+
+		<label for="area">Населений пункт завантаження відходів:</label>
+		<select id="area" name="area" required>
+		  <option value="" disabled selected>Оберіть населений пункт</option>
+		  <option value="Київ">Київ</option>
+		  <option value="Умань">Умань</option>
+		  <option value="Житомир">Житомир</option>
+		  <option value="Чернігів">Чернігів</option>
+		  <option value="Рівне">Рівне</option>
+		  <option value="Суми">Суми</option>
+		  <option value="Харків">Харків</option>
+		 </select>
+
+		 <label for="adress">Адреса:</label>
+		 <input type="text" id="adress" name="adress" required />
+		 
+      <input type="submit" value="Додати заявку" />
+    </form>
+
+    <h2>Управління замовленнями на утилізацію</h2>
+	 <p id="requestCount"></p>
+
+    <table id="requestTable">
+      <thead>
+        <tr>
+          <th>Тип відходів</th>
+          <th>Кількість відходів(кг)</th>
+          <th>Дата завантаження відходів</th>
+          <th>Населений пункт</th>
+			 <th>Адреса</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script src="js/script.js"></script>
+	 
+  </body>
+</html>
